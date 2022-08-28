@@ -1,7 +1,16 @@
-<h1>Solihull 25+ Day</h1>
-<div class="background">
+<h1 class="banner">Solihull 25+ Day</h1>
+<div class="background" [ngStyle]="{'grid-template-columns': 'repeat(auto-fit, ' + squareSideLength + 'px)', 'grid-template-rows': 'repeat(auto-fit, ' + squareSideLength + 'px)'}">
   <div class="square" *ngFor="let square of squares; index as i" id="{{ square.name }}"
-    [ngStyle]="{'border-top-color':square.colour1, 'border-left-color':square.colour1, 'border-right-color':square.colour2, 'border-bottom-color':square.colour2, 'animation-delay':i + '0ms'}">
+    [ngStyle]="getSquareStyling(square, i)">
   </div>
 </div>
-<div class="content"></div>
+<div class="content">
+  <h2>Solihull 25+ Fellowship Day</h2>
+  <h1>EDIFYING</h1>
+  <h4>Bro Tim Cresswell</h4>
+  <h3>
+    12th November, 10am arrival for drinks with a 10:30 start<br>
+    Solihull Christadelphian Hall, Grove Ave, Solihull B91 2AH
+  </h3>
+  <p>A day of bible study and fellowship for over 25s. Both baptised and non baptised are welcome</p>
+</div>
