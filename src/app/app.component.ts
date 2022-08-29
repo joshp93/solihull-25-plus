@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
     "#f2935d",
     "#40c0c0"
   ]
-  contentBoxStyling = {};
 
   ngOnInit() {
     this.generateSquares();
@@ -25,12 +24,22 @@ export class AppComponent implements OnInit {
   private onOrientationChange(event: Event) {
     this.squares = new Array<Square>();
     this.generateSquares();
+    this.getBackgroundStyling();
   }
 
   @HostListener('window:resize', ['$event'])
-  private onResizeEvent(event: Event) {
+  private onResizeEvent(event: any) {
     this.squares = new Array<Square>();
     this.generateSquares();
+    this.getBackgroundStyling();
+  }
+
+  getBackgroundStyling() {
+    return {
+      'height': `${document.documentElement.scrollHeight}px`,
+      'grid-template-columns': `repeat(auto-fit, ${this.squareSideLength}px)`,
+      'grid-template-rows': `repeat(auto-fit, ${this.squareSideLength}px)`
+    }
   }
 
   getSquareStyling(square: Square, i: number) {
@@ -45,8 +54,14 @@ export class AppComponent implements OnInit {
     }
   }
 
+  getContentStyling() {
+    return {
+      'top': `${this.squareSideLength}px`,
+      'min-height': `${(document.documentElement.scrollHeight - this.squareSideLength) - ((window.innerWidth / 100) * 2)}px`
+    }
+  }
+
   private generateSquares() {
-    this.contentBoxStyling = {};
     for (let i = 0; i < 1000; i++) {
       let colourPicker = Array<string>();
       this.colours.forEach(c => colourPicker.push(c));
@@ -61,6 +76,6 @@ export class AppComponent implements OnInit {
     return colourPicker.splice(i, 1)[0];
   }
 
-  private determineSquareSideLength = () => window.innerWidth / 20;
+  private determineSquareSideLength = () => (window.innerWidth / 20);
 
 }

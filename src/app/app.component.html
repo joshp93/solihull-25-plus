@@ -1,16 +1,23 @@
-<h1 class="banner">Solihull 25+ Day</h1>
-<div class="background" [ngStyle]="{'grid-template-columns': 'repeat(auto-fit, ' + squareSideLength + 'px)', 'grid-template-rows': 'repeat(auto-fit, ' + squareSideLength + 'px)'}">
-  <div class="square" *ngFor="let square of squares; index as i" id="{{ square.name }}"
+<!-- <h1 class="banner">Solihull 25+ Day</h1> -->
+<div class="background" [ngStyle]="getBackgroundStyling()">
+  <div class="square" *ngFor="let square of squares; index as i" [id]="square.name"
     [ngStyle]="getSquareStyling(square, i)">
   </div>
 </div>
-<div class="content">
+<div class="content" [ngStyle]="getContentStyling()">
   <h2>Solihull 25+ Fellowship Day</h2>
   <h1>EDIFYING</h1>
   <h4>Bro Tim Cresswell</h4>
   <h3>
-    12th November, 10am arrival for drinks with a 10:30 start<br>
-    Solihull Christadelphian Hall, Grove Ave, Solihull B91 2AH
+    <i><img src="../assets/clock.png" alt="Time">&nbsp;&nbsp;</i>12th November, 10am arrival for drinks with a 10:30 start<br>
+    <i><img src="../assets/home.png" alt="Location">&nbsp;&nbsp;</i><a target=”_blank” href="https://goo.gl/maps/61N8AVNxiLWiQCfQ8">Solihull Christadelphian Hall, Grove Ave, Solihull B91 2AH</a>
   </h3>
-  <p>A day of bible study and fellowship for over 25s. Both baptised and non baptised are welcome</p>
+  <p>
+    A day of bible study and fellowship for those 25 and over. Both baptised and non baptised are welcome.<br>
+    Bro Tim will be leading a mixture of talks and discussion based on the subject "Edifying". We will focus on the importance of fellowship and how we can encourage each other in our shared faith.<br>
+    <strong>ADD SOME DETAILS ABOUT ACTIVITY HERE</strong>
+  </p>
+  <button>
+    Book
+  </button>
 </div>
