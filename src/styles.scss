@@ -100,11 +100,9 @@ body {
 
     button {
         float: right;
-        font-size: 2rem;
-        font-weight: 400;
+        color: inherit;
         background: #40c0c0;
         border: 1px solid #ffffff;
-        color: inherit;
         padding: .5rem 1rem .5rem 1rem;
         background-image: linear-gradient(#f2935d, #f2935d);
         background-size: 0% 0rem;
@@ -119,6 +117,13 @@ body {
             background-size: 100% 4rem;
             outline: none;
         }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 2rem;
+            font-weight: 400;
+        }
     }
 
     i {
@@ -126,6 +131,7 @@ body {
             height: 1.5rem;
             width: 1.5rem;
         }
+
         font-style: normal;
         font-size: 2rem;
     }
