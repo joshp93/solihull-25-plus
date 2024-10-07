@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "solihul-25-plus:build:production"
+              "buildTarget": "solihul-25-plus:build:production"
             },
             "development": {
-              "browserTarget": "solihul-25-plus:build:development"
+              "buildTarget": "solihul-25-plus:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "solihul-25-plus:build"
+            "buildTarget": "solihul-25-plus:build"
           }
         },
         "test": {
