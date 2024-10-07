@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { Square } from './classes/square';
+import { Square } from './models/classes/square';
+import { ContentService } from './services/content.service';
+import { CmsContent } from "src/app/models/interfaces/cms-content";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,15 @@ export class AppComponent implements OnInit {
     "#2f728d",
     "#f2935d",
     "#40c0c0"
-  ]
+  ];
+  content: CmsContent | undefined;
+
+  constructor(private contentService: ContentService) {
+    contentService.getContent("2024").subscribe({
+      next: cmsContent => (this.content = cmsContent),
+      error: error => (console.error(error))
+    });
+  }
 
   ngOnInit() {
     this.generateSquares();

@@ -1,29 +1,22 @@
-<!-- <h1 class="banner">Solihull 25+ Day</h1> -->
 <div class="background" [ngStyle]="getBackgroundStyling()">
   <div class="square" *ngFor="let square of squares; index as i" [id]="square.name"
     [ngStyle]="getSquareStyling(square, i)">
   </div>
 </div>
 <div class="content" [ngStyle]="getContentStyling()">
-  <h2>Solihull Christadelphian 25+ Fellowship Day</h2>
-  <h1>"So encourage each other and build each other up"</h1>
+  <h2>{{ content?.heading }}</h2>
+  <h1>{{ content?.subject }}</h1>
   <h3>
     God willing<br>
-    <i><img src="assets/clock.png" alt="Time">&nbsp;&nbsp;</i>30th November 10am arrival<br>
+    <i><img src="assets/clock.png" alt="Time">&nbsp;&nbsp;</i>{{ content?.dateAndTime }}<br>
     <i><img src="assets/home.png" alt="Location">&nbsp;&nbsp;</i><a target=”_blank”
-      href="https://goo.gl/maps/61N8AVNxiLWiQCfQ8">Solihull Christadelphian Hall, Grove Ave, Solihull B91 2AH</a><br>
-    <i>£&nbsp;&nbsp;</i>10 for the day
+      [href]="content?.locationHref">{{ content?.location }}</a><br>
+    <i>£&nbsp;&nbsp;</i>{{ content?.price }}
   </h3>
-  <p>
-    A day of bible study and fellowship for those 25 and over. Both baptised and non baptised are welcome.
-    <br><br>
-    Bro. Adam Sheppard will give a talk, then lead a discussion on the above subject.
-    <br><br>
-    £10 for the day. Lunch and dinner provided. There will be a range of activities organised by the members of Solihull
-    Ecclesia.
+  <p [innerHTML]="content?.descriptionHtml">
   </p>
   <button>
-    <a href="https://forms.gle/oWfFNZnF82nNYreX8" target="_blank">
+    <a [href]="content?.bookingFormHref" target="_blank">
       Book
     </a>
   </button>
