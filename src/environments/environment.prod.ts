@@ -8,5 +8,5 @@ export const environment = {
     authDomain: 'solihull-25-plus.firebaseapp.com',
     messagingSenderId: '1027073351094',
     measurementId: 'G-82MEXZYSD8',
-  }
+  },
 };
