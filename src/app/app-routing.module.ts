@@ -4,7 +4,11 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { yearGuard } from './guards/year.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/2024', pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo: new Date().getFullYear().toString(),
+    pathMatch: 'full',
+  },
   { path: ':year', component: MainContentComponent, canActivate: [yearGuard] },
 ];
 
