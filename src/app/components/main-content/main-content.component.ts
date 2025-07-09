@@ -5,9 +5,10 @@ import { CmsContent } from 'src/app/models/interfaces/cms-content';
 import { ContentService } from 'src/app/services/content.service';
 
 @Component({
-  selector: 'app-main-content',
-  templateUrl: './main-content.component.html',
-  styleUrl: './main-content.component.scss',
+    selector: 'app-main-content',
+    templateUrl: './main-content.component.html',
+    styleUrl: './main-content.component.scss',
+    standalone: false
 })
 export class MainContentComponent {
   squares = new Array<Square>();
